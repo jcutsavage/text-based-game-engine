@@ -1,10 +1,17 @@
 cmake_minimum_required(VERSION 3.20)
-project(my_cpp_project LANGUAGES CXX)
+project(text-based-game-engine LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 
 # Standard CMake find_package, using Conan-generated config
 find_package(fmt REQUIRED CONFIG)
 
-add_executable(myapp src/main.cpp)
-target_link_libraries(myapp PRIVATE fmt::fmt)
+file(GLOB_RECURSE SOURCES "src/**/*.cpp")
+
+add_executable(text_game ${SOURCES})
+
+include_directories(
+    ${CMAKE_SOURCE_DIR}/src/main/cpp/TextGame
+)
+
+target_link_libraries(text_game PRIVATE fmt::fmt)

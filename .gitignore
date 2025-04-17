@@ -14,3 +14,4 @@
 # IDE files (Optional, depending on your IDE)
 .vscode/
 .idea/
+.cmake/
