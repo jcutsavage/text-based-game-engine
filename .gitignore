@@ -1,0 +1,16 @@
+# Ignore build folder
+/build/
+
+# Ignore Conan cache and files
+/.conan/
+/conan.lock
+/conanfile.py
+
+# Ignore CMake files generated during configuration
+/CMakeFiles/
+/CMakeCache.txt
+/conan_toolchain.cmake
+
+# IDE files (Optional, depending on your IDE)
+.vscode/
+.idea/
