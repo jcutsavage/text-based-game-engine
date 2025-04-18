@@ -1,11 +1,13 @@
 #include <fmt/core.h>
 #include <memory>
 #include <csignal>
+#include <string>
 
-#include "TextGame.h"
+#include "TextGameEngine.h"
+#include "GameSelector.h"
 #include "TextGameBuilder.h"
 
-std::shared_ptr<TextGame> game;
+std::shared_ptr<TextGameEngine> game_engine;
 
 void signalHandler(int signum)
 {
@@ -20,18 +22,20 @@ void signalHandler(int signum)
             fmt::print("Received unknown signal {}\n", signum);
     }
 
-    game->stop();
+    game_engine->stop();
 }
 
 int main() {
     std::signal(SIGINT, signalHandler);
     std::signal(SIGTERM, signalHandler);
 
-    fmt::println("Starting up your game!");
+    auto game_selector = new GameSelector();
 
-    game = TextGameBuilder::buildTextGame();
+    std::string game_type = game_selector->selectGame();
 
-    game->start();
+    game_engine = TextGameBuilder::buildTextGame(game_type);
+
+    game_engine->start();
 
     return 0;
 }

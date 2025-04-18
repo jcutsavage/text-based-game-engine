@@ -1,23 +1,23 @@
 #include <fmt/core.h>
 #include <thread>
 #include <chrono>
-#include "TextGame.h"
+#include "TextGameEngine.h"
 
-TextGame::TextGame() : running(true)
+TextGameEngine::TextGameEngine() : running(true)
 {
     fmt::println("Text game created!");
 }
 
-void TextGame::start()
+void TextGameEngine::start()
 {
     while(running)
     {
         fmt::println("Waiting....");
-        std::this_thread::sleep_for(std::chrono::seconds(5));
+        std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 }
 
-void TextGame::stop()
+void TextGameEngine::stop()
 {
     running = false;
 }

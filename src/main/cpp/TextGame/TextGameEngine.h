@@ -1,13 +1,13 @@
-#ifndef TEXTGAME_H_
-#define TEXTGAME_H_
+#ifndef TEXTGAMEENGINE_H_
+#define TEXTGAMEENGINE_H_
 
 #include <atomic>
 
-class TextGame
+class TextGameEngine
 {
 public:
 
-    TextGame();
+    TextGameEngine();
 
     void start();
 

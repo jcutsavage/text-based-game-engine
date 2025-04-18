@@ -1,7 +1,7 @@
 #include "TextGameBuilder.h"
 
 
-std::shared_ptr<TextGame> TextGameBuilder::buildTextGame()
+std::shared_ptr<TextGameEngine> TextGameBuilder::buildTextGame(std::string game_name)
 {
-    return std::make_shared<TextGame>();
+    return std::make_shared<TextGameEngine>();
 }

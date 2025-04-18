@@ -2,12 +2,13 @@
 #define TEXTGAME_BUILDER_H_
 
 #include <memory>
-#include "TextGame.h"
+#include <string>
+#include "TextGameEngine.h"
 
 class TextGameBuilder
 {
 public:
-    static std::shared_ptr<TextGame> buildTextGame();
+    static std::shared_ptr<TextGameEngine> buildTextGame(std::string game_name);
 };
 
 #endif
