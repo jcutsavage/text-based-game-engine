@@ -12,6 +12,7 @@ add_executable(text_game ${SOURCES})
 
 include_directories(
     ${CMAKE_SOURCE_DIR}/src/main/cpp/TextGame
+    ${CMAKE_SOURCE_DIR}/src/main/cpp/Utilities
 )
 
 target_link_libraries(text_game PRIVATE fmt::fmt)

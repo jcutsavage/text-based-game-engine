@@ -2,6 +2,7 @@
 #include <iostream>
 #include <algorithm>
 #include <cctype>
+#include "PrintUtilities.h"
 #include "GameSelector.h"
 
 bool equals_ignore_case(const std::string& a, const std::string& b) {
@@ -60,7 +61,9 @@ std::string GameSelector::selectGame()
         }
     }
 
-    fmt::println("Launching {} game", selection);
+    fmt::print("Launching {} game", selection);
+
+    printSlowly("....\n", 500);
 
     return selection;
 
