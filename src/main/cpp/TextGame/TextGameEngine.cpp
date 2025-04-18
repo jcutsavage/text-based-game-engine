@@ -2,16 +2,16 @@
 #include <thread>
 #include <chrono>
 #include <cstdlib>
+#include "PrintUtilities.h"
 #include "TextGameEngine.h"
 
 TextGameEngine::TextGameEngine() : running(true)
 {
 #ifdef _WIN32
-    std::system("cls");
+    int result = std::system("cls");
 #else
     int result = std::system("clear");
 #endif
-    fmt::println("Text game created!");
 }
 
 void TextGameEngine::start()
@@ -20,6 +20,7 @@ void TextGameEngine::start()
     {
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
+    PrintingUtils::printLine("Exiting game...");
 }
 
 void TextGameEngine::stop()

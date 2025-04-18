@@ -30,26 +30,26 @@ std::string GameSelector::selectGame()
 
     std::string selection;
 
-    typeOutput("Welcome! ");
+    PrintingUtils::print("Welcome! ");
 
     while(!selection_valid)
     {
-        typeOutputLine("Please choose a game type:\n");
+        PrintingUtils::printLine("Please choose a game type:\n");
 
         for(auto game_type : game_list)
         {
-            typeOutput(game_type + " ");
+            fmt::print(game_type + " ");
         }
     
-        typeOutputLine("\n");
+        PrintingUtils::printLine("\n");
     
-        typeOutput("Your selection: ");
+        PrintingUtils::print("Your selection: ");
         
         std::getline(std::cin, selection);
 
         std::transform(selection.begin(), selection.end(), selection.begin(), ::toupper);
 
-        typeOutputLine("\n");
+        PrintingUtils::printLine("");
 
         if(contains_ignore_case(game_list, selection))
         {
@@ -57,13 +57,13 @@ std::string GameSelector::selectGame()
         }
         else
         {
-            typeOutputLine("That is an invalid gametype!\n");
+            PrintingUtils::printLine("That is an invalid gametype!\n");
         }
     }
 
-    typeOutput("Launching " + selection + " game");
+    PrintingUtils::print("Launching " + selection + " game");
 
-    typeOutputLine("....", 500, 0);
+    PrintingUtils::printLine("....", 500, 0);
 
     return selection;
 
