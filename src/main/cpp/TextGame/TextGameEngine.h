@@ -1,13 +1,14 @@
-#ifndef TEXTGAMEENGINE_H_
-#define TEXTGAMEENGINE_H_
+#pragma once
 
 #include <atomic>
+
+#include "GameTypeEnum.h"
 
 class TextGameEngine
 {
 public:
 
-    TextGameEngine();
+    TextGameEngine(GameTypeEnum gametype);
 
     void start();
 
@@ -15,7 +16,8 @@ public:
 
 private:
 
+    void printGametypeSplashScreen();
+
+    GameTypeEnum gametype;
     std::atomic<bool> running;
 };
-
-#endif

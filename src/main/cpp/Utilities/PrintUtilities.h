@@ -6,7 +6,7 @@
 #include <chrono>
 #include <cstdlib>
 
-namespace PrintingUtils
+namespace PrintUtils
 {
     /**
      * This function simulates a person typing, with random variances in delays between each character

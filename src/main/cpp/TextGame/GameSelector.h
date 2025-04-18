@@ -1,18 +1,17 @@
-#ifndef GAMESELECTOR_H_
-#define GAMESELECTOR_H_
+#pragma once
 
-#include <set>
+#include <vector>
 #include <string>
+
+#include "GameTypeEnum.h"
 
 class GameSelector
 {
 public:
     GameSelector();
 
-    std::string selectGame();
+    GameTypeEnum selectGame();
 
 private:
-    std::set<std::string> game_list;
+    std::vector<std::vector<std::string>> gametypes;
 };
-
-#endif
